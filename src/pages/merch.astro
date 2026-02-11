@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Order Merch | Team Castlemaine">
+  <!-- Hero Section -->
+  <section class="hero min-h-[40vh] bg-gradient-to-br from-secondary via-secondary to-neutral text-secondary-content">
+    <div class="hero-content text-center">
+      <div class="max-w-3xl">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Order Merch</h1>
+        <p class="text-xl md:text-2xl mb-8 font-semibold">
+          Show your support with Team Castlemaine merchandise
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Merch Info Section -->
+  <section class="py-16 px-4 bg-base-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Wear Our Story</h2>
+      <p class="text-lg leading-relaxed mb-12 max-w-3xl mx-auto">
+        Our playing kits and merchandise are more than just uniforms; they are a representation of our community and our values.
+        We are proud to feature designs by two local Aboriginal artists, <strong>Aunty Ros and Melissa Taylor</strong>.
+        By wearing our merch, you are celebrating First Nations solidarity and the diverse, inclusive spirit of Castlemaine.
+      </p>
+
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Available Items</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body items-center text-center">
+            <div class="bg-primary/10 p-6 rounded-full mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+              </svg>
+            </div>
+            <h3 class="card-title">Playing Kits</h3>
+            <p>Official Team Castlemaine playing uniforms</p>
+          </div>
+        </div>
+
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body items-center text-center">
+            <div class="bg-secondary/10 p-6 rounded-full mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="card-title">T-Shirts</h3>
+            <p>Casual wear with Team Castlemaine branding</p>
+          </div>
+        </div>
+
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body items-center text-center">
+            <div class="bg-accent/10 p-6 rounded-full mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+              </svg>
+            </div>
+            <h3 class="card-title">Accessories</h3>
+            <p>Caps, bags, and more</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card bg-primary text-primary-content max-w-xl mx-auto">
+        <div class="card-body text-center">
+          <h3 class="card-title justify-center text-2xl">Ready to Order?</h3>
+          <p>Contact us to place your merchandise order or enquire about available items and sizes.</p>
+          <div class="card-actions justify-center mt-4">
+            <a href="/contact" class="btn btn-secondary">Contact Us to Order</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support Message -->
+  <section class="py-16 px-4 bg-base-200">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Support Our Cause</h2>
+      <p class="text-lg">
+        All profits from merchandise sales go towards supporting children from 
+        disadvantaged backgrounds who lack the financial means to participate in sports.
+      </p>
+    </div>
+  </section>
+</Layout>

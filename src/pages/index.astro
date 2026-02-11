@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <!-- Hero Section -->
+  <section class="hero min-h-[40vh] bg-gradient-to-br from-secondary via-secondary to-neutral text-secondary-content relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/logo.jpg')] opacity-5 bg-center bg-no-repeat bg-contain"></div>
+    <div class="hero-content text-center relative z-10">
+      <div class="max-w-3xl">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Team Castlemaine</h1>
+        <p class="text-xl md:text-2xl mb-8 opacity-90">
+          A not-for-profit community sports group supporting Castlemaine and regional Victoria
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <a href="/hockey" class="btn btn-primary btn-lg hover:scale-105 transition-transform shadow-lg">Play Hockey</a>
+          <a href="/sponsor" class="btn btn-outline btn-lg border-white text-white hover:bg-white hover:text-secondary hover:scale-105 transition-all">Sponsor Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-16 px-4 bg-base-100">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">About Team Castlemaine</h2>
+      <p class="text-xl text-center text-primary font-semibold mb-12">Play Without Boundaries</p>
+
+      <p class="text-lg leading-relaxed mb-8 text-center max-w-4xl mx-auto">
+        Team Castlemaine is a new local not-for-profit sports group established to support the local community
+        in Castlemaine and regional Victoria. We are not just about the score on the board; we focus on
+        promoting sports and inclusivity to foster connection.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <!-- Hyper-Inclusivity Card -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="bg-primary/10 p-3 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h3 class="card-title text-2xl">Our Mission</h3>
+            </div>
+            <p class="leading-relaxed">
+              Our vision is to create play and recreational opportunities for all people to connect, without boundaries.
+              We pride ourselves on being "Hyper Inclusive"—welcoming everyone irrespective of gender, age, skin colour,
+              neurodivergence, skill level, background, or socio-economic status.
+            </p>
+            <p class="leading-relaxed mt-3 opacity-80">
+              From First Nations solidarity to trans and gender diverse inclusion, we strive to create a safe environment
+              and a supportive community where everyone belongs.
+            </p>
+          </div>
+        </div>
+
+        <!-- Giving Back Card -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="bg-secondary/10 p-3 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <h3 class="card-title text-2xl">Giving Back</h3>
+            </div>
+            <p class="leading-relaxed">
+              We believe financial barriers should never stop a child from playing. Profits from Team Castlemaine go
+              directly to assisting children from disadvantaged backgrounds who lack the financial means to
+              participate in sports.
+            </p>
+            <div class="alert alert-success mt-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>100% of profits support disadvantaged kids in sports</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Involved / Programs Section -->
+  <section class="py-16 px-4 bg-base-200">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Get Involved</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Hockey Card -->
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="bg-primary/10 p-3 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 class="card-title text-2xl">Hockey</h3>
+            </div>
+            <p class="leading-relaxed">
+              Teams for adults, teenagers, and children. We welcome everyone from elite players
+              to those who have never picked up a stick.
+            </p>
+            <div class="card-actions justify-end mt-4">
+              <a href="/hockey" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Castlemaine Play Card -->
+        <div class="card bg-base-100 shadow-xl">
+          <div class="card-body">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="bg-secondary/10 p-3 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 class="card-title text-2xl">Castlemaine Play</h3>
+              <span class="badge badge-secondary">Coming Soon</span>
+            </div>
+            <p class="leading-relaxed">
+              A rotating sports program—think "PE out of school" for all ages and abilities.
+            </p>
+            <p class="leading-relaxed mt-3 opacity-70">
+              One week might be softball, the next 20/20 cricket. Come play with friends and family
+              just for the love of the game!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Identity Section -->
+  <section class="py-16 px-4 bg-base-100">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Identity</h2>
+      <p class="text-lg leading-relaxed mb-6">
+        We wear our values with pride. Our playing kits have been designed by two local Aboriginal artists,
+        Aunty Ros and Melissa Taylor, to truly represent our community.
+      </p>
+      <div class="card bg-gradient-to-br from-primary to-success text-primary-content shadow-xl max-w-2xl mx-auto">
+        <div class="card-body text-center">
+          <h3 class="text-2xl font-bold">Game On!</h3>
+          <p class="text-lg font-semibold">
+            We strive to win, bring our best, work as a team, and most importantly,
+            have fun while doing it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 px-4 bg-primary text-primary-content">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Get Involved</h2>
+      <p class="text-xl mb-8 font-semibold">
+        Join our community and be part of something special
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="/hockey" class="btn btn-secondary btn-lg hover:scale-105 transition-transform">Play Hockey</a>
+        <a href="/merch" class="btn btn-outline btn-lg border-secondary hover:bg-secondary hover:text-white hover:scale-105 transition-all">Order Merch</a>
+        <a href="/sponsor" class="btn btn-outline btn-lg border-secondary hover:bg-secondary hover:text-white hover:scale-105 transition-all">Sponsor Us</a>
+      </div>
+    </div>
+  </section>
+</Layout>

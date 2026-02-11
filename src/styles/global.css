@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Team Castlemaine Custom Colors - OKLCH for Tailwind v4 */
+:root {
+  /* Primary - Lime Green #84cc16 */
+  --color-primary: oklch(0.76 0.20 130);
+  --color-primary-content: oklch(0.25 0 0);
+
+  /* Secondary - Black #1a1a1a */
+  --color-secondary: oklch(0.25 0 0);
+  --color-secondary-content: oklch(1.0 0 0);
+
+  /* Accent - Red */
+  --color-accent: oklch(0.63 0.24 25);
+  --color-accent-content: oklch(1.0 0 0);
+
+  /* Neutral - Dark Gray */
+  --color-neutral: oklch(0.35 0 0);
+  --color-neutral-content: oklch(1.0 0 0);
+
+  /* Base - White backgrounds */
+  --color-base-100: oklch(1.0 0 0);
+  --color-base-200: oklch(0.96 0 0);
+  --color-base-300: oklch(0.90 0 0);
+  --color-base-content: oklch(0.25 0 0);
+
+  /* Status colors */
+  --color-info: oklch(0.65 0.20 260);
+  --color-success: oklch(0.76 0.20 130);
+  --color-warning: oklch(0.75 0.15 70);
+  --color-error: oklch(0.63 0.24 25);
+}
+
+/* Custom animations and styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Ensure proper font rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  /* Card hover effects */
+  .card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Button animations */
+  .btn {
+    transition: all 0.2s ease-in-out;
+  }
+
+  /* Link hover effects */
+  a:not(.btn):not(.link-hover) {
+    transition: color 0.2s ease-in-out;
+  }
+
+  /* Form focus states */
+  .input:focus,
+  .textarea:focus,
+  .select:focus {
+    outline: 2px solid #84cc16;
+    outline-offset: 2px;
+  }
+
+  /* Smooth gradient animations */
+  .hero {
+    background-size: 200% 200%;
+  }
+}

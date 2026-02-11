@@ -1,0 +1,204 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Play Hockey | Team Castlemaine">
+  <!-- Hero Section -->
+  <section class="hero min-h-[40vh] bg-gradient-to-br from-primary to-success text-primary-content">
+    <div class="hero-content text-center">
+      <div class="max-w-3xl">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Play Hockey</h1>
+        <p class="text-xl md:text-2xl mb-8 font-semibold">
+          Hockey for Everyone
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info Section -->
+  <section class="py-16 px-4 bg-base-100">
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-12 text-center max-w-3xl mx-auto">
+        <p class="text-lg leading-relaxed mb-6">
+          Whether you are an elite player or have never picked up a stick in your life, there is a place for you at Team Castlemaine.
+          We are building teams for:
+        </p>
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+          <div class="card bg-base-200 shadow-lg">
+            <div class="card-body text-center py-6">
+              <h3 class="font-bold text-xl">Adults</h3>
+            </div>
+          </div>
+          <div class="card bg-base-200 shadow-lg">
+            <div class="card-body text-center py-6">
+              <h3 class="font-bold text-xl">Teenagers</h3>
+            </div>
+          </div>
+          <div class="card bg-base-200 shadow-lg">
+            <div class="card-body text-center py-6">
+              <h3 class="font-bold text-xl">Children</h3>
+            </div>
+          </div>
+        </div>
+        <p class="text-lg leading-relaxed">
+          We focus on fun, connection, and "hyper-inclusivity." Our goal is to create a supportive environment where everyone can thrive,
+          learn new skills, and back each other up on the pitch. Come and join us—we strive to win, but we value the team and the fun above all else.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expression of Interest Form -->
+  <section class="py-16 px-4 bg-base-200">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Expression of Interest</h2>
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body">
+          <form id="hockey-form" class="space-y-6" data-form-type="hockey-interest">
+            <input type="hidden" name="access_key" value="7eafd19c-94f2-4d9e-803d-3be2825845b3" />
+            <input type="hidden" name="subject" value="New Hockey Interest Form - Team Castlemaine" />
+            <input type="hidden" name="from_name" value="Team Castlemaine Website" />
+
+            <div class="form-control">
+              <label class="label" for="name">
+                <span class="label-text">Full Name <span class="text-error">*</span></span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                class="input input-bordered w-full"
+                required
+                minlength="2"
+                autocomplete="name"
+              />
+            </div>
+
+            <div class="form-control">
+              <label class="label" for="email">
+                <span class="label-text">Email <span class="text-error">*</span></span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your@email.com"
+                class="input input-bordered w-full"
+                required
+                autocomplete="email"
+              />
+            </div>
+
+            <div class="form-control">
+              <label class="label" for="phone">
+                <span class="label-text">Phone</span>
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Your phone number"
+                class="input input-bordered w-full"
+                autocomplete="tel"
+              />
+            </div>
+
+            <div class="form-control">
+              <label class="label" for="experience">
+                <span class="label-text">Hockey Experience <span class="text-error">*</span></span>
+              </label>
+              <select id="experience" name="experience" class="select select-bordered w-full" required>
+                <option disabled selected value="">Select your experience level</option>
+                <option value="beginner">Complete Beginner</option>
+                <option value="rusty">Played before but rusty</option>
+                <option value="regular">Regular player</option>
+                <option value="elite">Competitive/Elite player</option>
+              </select>
+            </div>
+
+            <div class="form-control">
+              <label class="label" for="age-group">
+                <span class="label-text">Age Group <span class="text-error">*</span></span>
+              </label>
+              <select id="age-group" name="age-group" class="select select-bordered w-full" required>
+                <option disabled selected value="">Select age group</option>
+                <option value="junior">Junior (Under 12)</option>
+                <option value="youth">Youth (12-17)</option>
+                <option value="adult">Adult (18+)</option>
+              </select>
+            </div>
+
+            <div class="form-control">
+              <label class="label" for="message">
+                <span class="label-text">Additional Comments</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                class="textarea textarea-bordered h-24"
+                placeholder="Any questions or comments?"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-full" id="submit-btn">
+              <span class="submit-text">Submit Interest</span>
+              <span class="loading loading-spinner loading-sm hidden"></span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('astro:page-load', () => {
+      const form = document.getElementById('hockey-form') as HTMLFormElement;
+      if (!form) return;
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+        const submitText = submitBtn.querySelector('.submit-text') as HTMLElement;
+        const spinner = submitBtn.querySelector('.loading') as HTMLElement;
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitText.textContent = 'Submitting...';
+        spinner.classList.remove('hidden');
+
+        // Get form data
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+          const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+
+          const result = await response.json();
+
+          if (!response.ok || !result.success) {
+            throw new Error(result.message || 'Submission failed');
+          }
+
+          // Success
+          window.showToast('Thank you! We\'ll be in touch soon.', 'success');
+          form.reset();
+        } catch (error) {
+          // Error
+          window.showToast('Something went wrong. Please try again or email us directly.', 'error');
+          console.error('Form submission error:', error);
+        } finally {
+          // Reset button state
+          submitBtn.disabled = false;
+          submitText.textContent = 'Submit Interest';
+          spinner.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</Layout>
