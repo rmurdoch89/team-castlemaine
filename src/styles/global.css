@@ -30,6 +30,12 @@
   --color-success: oklch(0.76 0.20 130);
   --color-warning: oklch(0.75 0.15 70);
   --color-error: oklch(0.63 0.24 25);
+
+  /* Artwork-inspired colors */
+  --color-artwork-aqua: oklch(0.70 0.15 220);
+  --color-artwork-teal: oklch(0.65 0.12 200);
+  --color-artwork-earth: oklch(0.55 0.08 50);
+  --color-artwork-green: oklch(0.60 0.15 140);
 }
 
 /* Custom animations and styles */
@@ -77,5 +83,47 @@
   /* Smooth gradient animations */
   .hero {
     background-size: 200% 200%;
+  }
+
+  /* Artwork overlay gradients for hero sections */
+  .artwork-overlay-dark {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+  }
+
+  .artwork-overlay-gradient {
+    background: linear-gradient(to right, rgba(132, 204, 22, 0.85), rgba(0, 0, 0, 0.75));
+  }
+
+  /* Mobile: stronger overlay for readability */
+  @media (max-width: 768px) {
+    .artwork-overlay-gradient {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85));
+    }
+  }
+
+  /* Border decoration using artwork */
+  .artwork-border-top {
+    border-top: 8px solid transparent;
+    border-image: url('/images/artwork/indigenous-artwork-border.jpg') 30 round;
+  }
+
+  /* Card background accent */
+  .card-artwork-accent {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-artwork-accent::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 120px;
+    background-image: url('/images/artwork/indigenous-artwork-pattern-2.jpg');
+    background-size: cover;
+    opacity: 0.08;
+    transform: rotate(15deg) translate(20px, -20px);
+    pointer-events: none;
   }
 }

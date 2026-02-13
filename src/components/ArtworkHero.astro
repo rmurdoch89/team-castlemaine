@@ -1,0 +1,58 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  artworkVariant?: 'full' | 'pattern-1' | 'pattern-2' | 'pattern-3';
+  overlayStyle?: 'dark' | 'gradient' | 'light';
+  ctaButtons?: Array<{text: string, href: string, style: string}>;
+}
+
+const {
+  title,
+  subtitle,
+  artworkVariant = 'full',
+  overlayStyle = 'gradient',
+  ctaButtons = []
+} = Astro.props;
+
+const artworkPath = `/images/artwork/indigenous-artwork-${artworkVariant}.jpg`;
+const overlayClass = overlayStyle === 'dark'
+  ? 'artwork-overlay-dark'
+  : overlayStyle === 'gradient'
+  ? 'artwork-overlay-gradient'
+  : 'bg-black/30';
+---
+
+<section class="hero min-h-[40vh] relative overflow-hidden">
+  <!-- Background artwork -->
+  <div class="absolute inset-0">
+    <img
+      src={artworkPath}
+      alt=""
+      class="w-full h-full object-cover"
+      loading="eager"
+    />
+  </div>
+
+  <!-- Overlay for text readability -->
+  <div class={`absolute inset-0 ${overlayClass}`}></div>
+
+  <!-- Content -->
+  <div class="hero-content text-center relative z-10 text-white">
+    <div class="max-w-3xl">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">{title}</h1>
+      {subtitle && (
+        <p class="text-xl md:text-2xl mb-8 font-semibold drop-shadow-md opacity-90">
+          {subtitle}
+        </p>
+      )}
+      {ctaButtons.length > 0 && (
+        <div class="flex flex-wrap gap-4 justify-center">
+          {ctaButtons.map(btn => (
+            <a href={btn.href} class={btn.style}>{btn.text}</a>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+</section>

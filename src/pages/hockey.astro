@@ -1,19 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ArtworkHero from '../components/ArtworkHero.astro';
 ---
 
 <Layout title="Play Hockey | Team Castlemaine">
   <!-- Hero Section -->
-  <section class="hero min-h-[40vh] bg-gradient-to-br from-primary to-success text-primary-content">
-    <div class="hero-content text-center">
-      <div class="max-w-3xl">
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Play Hockey</h1>
-        <p class="text-xl md:text-2xl mb-8 font-semibold">
-          Hockey for Everyone
-        </p>
-      </div>
-    </div>
-  </section>
+  <ArtworkHero
+    title="Play Hockey"
+    subtitle="Hockey for Everyone"
+    artworkVariant="pattern-1"
+    overlayStyle="gradient"
+  />
 
   <!-- Info Section -->
   <section class="py-16 px-4 bg-base-100">

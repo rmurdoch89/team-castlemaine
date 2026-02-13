@@ -1,24 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ArtworkHero from '../components/ArtworkHero.astro';
+import ArtworkDivider from '../components/ArtworkDivider.astro';
 ---
 
 <Layout>
   <!-- Hero Section -->
-  <section class="hero min-h-[40vh] bg-gradient-to-br from-secondary via-secondary to-neutral text-secondary-content relative overflow-hidden">
-    <div class="absolute inset-0 bg-[url('/logo.jpg')] opacity-5 bg-center bg-no-repeat bg-contain"></div>
-    <div class="hero-content text-center relative z-10">
-      <div class="max-w-3xl">
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Team Castlemaine</h1>
-        <p class="text-xl md:text-2xl mb-8 opacity-90">
-          A not-for-profit community sports group supporting Castlemaine and regional Victoria
-        </p>
-        <div class="flex flex-wrap gap-4 justify-center">
-          <a href="/hockey" class="btn btn-primary btn-lg hover:scale-105 transition-transform shadow-lg">Play Hockey</a>
-          <a href="/sponsor" class="btn btn-outline btn-lg border-white text-white hover:bg-white hover:text-secondary hover:scale-105 transition-all">Sponsor Us</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <ArtworkHero
+    title="Team Castlemaine"
+    subtitle="A not-for-profit community sports group supporting Castlemaine and regional Victoria"
+    artworkVariant="full"
+    overlayStyle="gradient"
+    ctaButtons={[
+      {text: "Play Hockey", href: "/hockey", style: "btn btn-primary btn-lg hover:scale-105 transition-transform shadow-lg"},
+      {text: "Sponsor Us", href: "/sponsor", style: "btn btn-outline btn-lg border-white text-white hover:bg-white hover:text-secondary hover:scale-105 transition-all"}
+    ]}
+  />
 
   <!-- About Section -->
   <section class="py-16 px-4 bg-base-100">
@@ -84,6 +81,9 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- Section Divider -->
+  <ArtworkDivider variant="subtle" spacing="normal" />
+
   <!-- Get Involved / Programs Section -->
   <section class="py-16 px-4 bg-base-200">
     <div class="max-w-6xl mx-auto">
@@ -136,21 +136,70 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- Section Divider -->
+  <ArtworkDivider variant="subtle" spacing="normal" />
+
   <!-- Our Identity Section -->
-  <section class="py-16 px-4 bg-base-100">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Identity</h2>
-      <p class="text-lg leading-relaxed mb-6">
+  <section class="py-16 px-4 bg-base-100 relative overflow-hidden">
+    <!-- Background artwork with heavy overlay -->
+    <div class="absolute inset-0 opacity-10">
+      <img
+        src="/images/artwork/indigenous-artwork-full.jpg"
+        alt=""
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <div class="max-w-6xl mx-auto relative z-10">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Our Identity</h2>
+
+      <p class="text-lg leading-relaxed mb-8 text-center max-w-3xl mx-auto">
         We wear our values with pride. Our playing kits have been designed by two local Aboriginal artists,
-        Aunty Ros and Melissa Taylor, to truly represent our community.
+        <strong>Aunty Ros and Melissa Taylor</strong>, to truly represent our community.
       </p>
-      <div class="card bg-gradient-to-br from-primary to-success text-primary-content shadow-xl max-w-2xl mx-auto">
-        <div class="card-body text-center">
-          <h3 class="text-2xl font-bold">Game On!</h3>
-          <p class="text-lg font-semibold">
-            We strive to win, bring our best, work as a team, and most importantly,
-            have fun while doing it.
-          </p>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <!-- Artwork Showcase -->
+        <div class="card bg-white shadow-2xl overflow-hidden">
+          <figure class="h-64 md:h-80">
+            <img
+              src="/images/artwork/indigenous-artwork-full.jpg"
+              alt="Indigenous artwork by Aunty Ros and Melissa Taylor featuring blue flowing water patterns, concentric circles, and native plants"
+              class="w-full h-full object-cover"
+            />
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title text-2xl">Artwork by Aunty Ros & Melissa Taylor</h3>
+            <p class="text-base opacity-80">
+              This beautiful Indigenous artwork represents our connection to Country, community, and the
+              flowing spirit of teamwork. The blue waterways symbolize movement and life, while the
+              concentric circles represent gathering and connection.
+            </p>
+          </div>
+        </div>
+
+        <!-- Values Card -->
+        <div class="flex flex-col gap-6">
+          <div class="card bg-gradient-to-br from-primary to-success text-primary-content shadow-xl">
+            <div class="card-body">
+              <h3 class="text-2xl font-bold">Game On!</h3>
+              <p class="text-lg font-semibold">
+                We strive to win, bring our best, work as a team, and most importantly,
+                have fun while doing it.
+              </p>
+            </div>
+          </div>
+
+          <div class="card bg-base-200 shadow-xl card-artwork-accent">
+            <div class="card-body">
+              <h3 class="card-title">First Nations Solidarity</h3>
+              <p>
+                We acknowledge the Traditional Custodians of the land on which we play and gather.
+                By featuring Indigenous artwork, we celebrate and honor Aboriginal culture and
+                ongoing connection to Country.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

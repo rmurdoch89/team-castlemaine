@@ -1,19 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ArtworkHero from '../components/ArtworkHero.astro';
 ---
 
 <Layout title="Order Merch | Team Castlemaine">
   <!-- Hero Section -->
-  <section class="hero min-h-[40vh] bg-gradient-to-br from-secondary via-secondary to-neutral text-secondary-content">
-    <div class="hero-content text-center">
-      <div class="max-w-3xl">
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Order Merch</h1>
-        <p class="text-xl md:text-2xl mb-8 font-semibold">
-          Show your support with Team Castlemaine merchandise
-        </p>
-      </div>
-    </div>
-  </section>
+  <ArtworkHero
+    title="Order Merch"
+    subtitle="Show your support with Team Castlemaine merchandise"
+    artworkVariant="pattern-3"
+    overlayStyle="gradient"
+  />
 
   <!-- Merch Info Section -->
   <section class="py-16 px-4 bg-base-100">

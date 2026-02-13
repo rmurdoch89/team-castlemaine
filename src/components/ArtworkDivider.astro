@@ -1,0 +1,32 @@
+---
+interface Props {
+  variant?: 'border' | 'wave' | 'subtle';
+  spacing?: 'tight' | 'normal' | 'loose';
+}
+
+const { variant = 'border', spacing = 'normal' } = Astro.props;
+const spacingClass = spacing === 'tight' ? 'my-4' : spacing === 'loose' ? 'my-16' : 'my-8';
+---
+
+{variant === 'border' && (
+  <div class={`w-full h-2 ${spacingClass}`}>
+    <div class="artwork-border-top h-full"></div>
+  </div>
+)}
+
+{variant === 'wave' && (
+  <div class={`relative ${spacingClass} h-12 overflow-hidden`}>
+    <img
+      src="/images/artwork/indigenous-artwork-border.jpg"
+      alt=""
+      class="w-full h-full object-cover opacity-30"
+      loading="lazy"
+    />
+  </div>
+)}
+
+{variant === 'subtle' && (
+  <div class={`w-24 h-1 mx-auto ${spacingClass} opacity-40`}>
+    <img src="/images/artwork/indigenous-artwork-border.jpg" alt="" class="w-full h-full object-cover" loading="lazy" />
+  </div>
+)}

@@ -38,6 +38,12 @@ const {
     <meta property="twitter:description" content={description} />
 
     <link rel="icon" type="image/jpeg" href="/logo.jpg" />
+    <link
+      rel="preload"
+      as="image"
+      href="/images/artwork/indigenous-artwork-hero.jpg"
+      fetchpriority="high"
+    />
     <title>{title}</title>
     <ViewTransitions />
   </head>
@@ -94,6 +100,9 @@ const {
       <aside class="text-sm">
         <p><span class="font-semibold">Team Castlemaine</span> • Castlemaine, Victoria</p>
         <p class="text-xs opacity-70 mt-1">© {new Date().getFullYear()} Team Castlemaine. All rights reserved.</p>
+        <p class="text-xs opacity-70 mt-2">
+          Playing kit designs by Aunty Ros and Melissa Taylor
+        </p>
       </aside>
     </footer>
 

@@ -1,19 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ArtworkHero from '../components/ArtworkHero.astro';
 ---
 
 <Layout title="Sponsor Us | Team Castlemaine">
   <!-- Hero Section -->
-  <section class="hero min-h-[40vh] bg-gradient-to-br from-primary to-success text-primary-content">
-    <div class="hero-content text-center">
-      <div class="max-w-3xl">
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Sponsor Us</h1>
-        <p class="text-xl md:text-2xl mb-8 font-semibold">
-          Support Local Sport
-        </p>
-      </div>
-    </div>
-  </section>
+  <ArtworkHero
+    title="Sponsor Us"
+    subtitle="Support Local Sport"
+    artworkVariant="pattern-2"
+    overlayStyle="gradient"
+  />
 
   <!-- Mission Statement -->
   <section class="py-16 px-4 bg-base-100">
